@@ -17,5 +17,5 @@ model User {
   password    String
   mobile String
   cardId   String
-  status   Int
+  status   Boolean
 }
