@@ -1,7 +1,12 @@
 #Prisma
 
 Tanapat Nunkhong
-
+## Required
+- Git
+- docker & DockerCompose
+- PostgreSQL
+- Node.js
+- Prisma
 ## Running
 ### Database
 ```
