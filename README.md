@@ -15,11 +15,12 @@ docker compose up -d
 ### Schema
 ```
 npx prisma generate
-
 npx prisma studio
 ```
 
 ## Develop
-```bash
+```First time
 npx prisma init --datasource-provider postgresql
+npx prisma generate
+npx prisma db push
 ```
