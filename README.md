@@ -44,6 +44,6 @@ npx pisma generate
 ```
 ### hono
 ```bash
-npx tsx
+npx tsc
 node dist/server.js
 ```
