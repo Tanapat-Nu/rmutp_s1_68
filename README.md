@@ -9,6 +9,8 @@ Tanapat Nunkhong
 - Prisma
 - VSCode
     - PostgreSQL extensions (Chris Kolkman)
+- typescript
+- vitest
 ## Running
 ### Database
 ```
@@ -39,4 +41,9 @@ npx prisma db push
 ### Nomal
 ```bash
 npx pisma generate
+```
+### hono
+```bash
+npx tsx
+node dist/server.js
 ```
