@@ -47,3 +47,7 @@ npx pisma generate
 npx tsc
 node dist/server.js
 ```
+### Run tsc
+```bash
+npm run tsc
+```
