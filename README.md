@@ -42,12 +42,7 @@ npx prisma db push
 ```bash
 npx pisma generate
 ```
-### hono
-```bash
-npx tsc
-node dist/server.js
-```
-### Run tsc
+### Develop
 ```bash
 npm run build
 ```
