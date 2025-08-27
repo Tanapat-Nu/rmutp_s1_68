@@ -8,7 +8,7 @@
     "vitest": "^3.2.4"
   },
   "scripts": {
-    "build": "tsc app/server.ts --outDir dist",                
+    "build": "tsc",                
     "start": "node app/dist/server.js",   
     "dev": "ts-node app/server.ts",       
     "tscx": "tsc -p app && node app/dist/server.js"
