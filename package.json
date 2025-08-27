@@ -8,10 +8,10 @@
     "vitest": "^3.2.4"
   },
   "scripts": {
-    "build": "tsc -p app",                
+    "build": "tsc app/server.ts --outDir dist",                
     "start": "node app/dist/server.js",   
     "dev": "ts-node app/server.ts",       
-    "tsc": "tsc -p app && node app/dist/server.js"
+    "tscx": "tsc -p app && node app/dist/server.js"
   },
 
   "devDependencies": {
