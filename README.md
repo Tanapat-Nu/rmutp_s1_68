@@ -49,5 +49,5 @@ node dist/server.js
 ```
 ### Run tsc
 ```bash
-npm run tsc
+npm run build
 ```
