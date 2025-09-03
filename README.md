@@ -11,10 +11,17 @@ Tanapat Nunkhong
     - PostgreSQL extensions (Chris Kolkman)
 - typescript
 - vitest
+- bcrypt
 ## Running
 ### Database
 ```
 docker compose up -d
+```
+### Branch
+```
+git branch
+git checkout -b develop
+git checkout develop
 ```
 ### Schema
 ```
@@ -45,4 +52,6 @@ npx pisma generate
 ### Develop
 ```bash
 npm run build
+npm run dev
+curl http://localhost:3000/profile
 ```
