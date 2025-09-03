@@ -11,7 +11,7 @@
   "scripts": {
     "build": "tsc",
     "start": "node app/dist/server.js",
-    "dev": "ts-node app/server.ts",
+    "dev": "ts-node dist/server.js",
     "tscx": "tsc -p app && node app/dist/server.js"
   },
   "devDependencies": {
