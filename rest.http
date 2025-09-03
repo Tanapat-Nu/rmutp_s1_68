@@ -1,0 +1,7 @@
+# REST API
+
+### Get All Profile
+GET http://localhost:3000/Profile
+### Create New Profile
+### curl -X POST http://localhost:3000/Profile
+POST http://localhost:3000/Profile
