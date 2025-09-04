@@ -48,7 +48,7 @@ npx prisma format
 
 ### Nomal
 ```bash
-npx pisma generate
+npx prisma generate
 ```
 ### Develop
 ```bash
