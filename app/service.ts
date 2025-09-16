@@ -1,26 +1,42 @@
 import * as crypto from "crypto";
 
+const algorithm = "aes-256-cbc";
+
+
+const SECRET_KEY = process.env.SECRET_KEY || "my-secret-key";
+
+
 const ENCRYPTION_KEY = crypto
   .createHash("sha256")
-  .update(String(process.env.SECRET_KEY || "my-secret-key"))
-  .digest("base64")
-  .substr(0, 32); // 32 bytes key
-const IV = Buffer.from("1234567890123456");
+  .update(SECRET_KEY)
+  .digest()
+  .subarray(0, 32);
+
 
 export function encode(text: string): string {
-  const cipher = crypto.createCipheriv("aes-256-cbc", ENCRYPTION_KEY, IV);
+  const iv = crypto.randomBytes(16);
+  const cipher = crypto.createCipheriv(algorithm, ENCRYPTION_KEY, iv);
+
   let encrypted = cipher.update(text, "utf8", "base64");
   encrypted += cipher.final("base64");
 
+  const packed = iv.toString("base64") + ":" + encrypted;
+
   console.log(`[ENCODE] input: ${text} -> output: ${encrypted}`);
-  return encrypted;
+  return packed;
 }
 
-export function decode(text: string): string {
-  const decipher = crypto.createDecipheriv("aes-256-cbc", ENCRYPTION_KEY, IV);
-  let decrypted = decipher.update(text, "base64", "utf8");
+export function decode(packed: string): string {
+  const [ivB64, cipherB64] = packed.split(":");
+  if (!ivB64 || !cipherB64) {
+    throw new Error("Invalid payload format");
+  }
+
+  const iv = Buffer.from(ivB64, "base64");
+  const decipher = crypto.createDecipheriv(algorithm, ENCRYPTION_KEY, iv);
+
+  let decrypted = decipher.update(cipherB64, "base64", "utf8");
   decrypted += decipher.final("utf8");
 
-  console.log(`[DECODE] input: ${text} -> output: ${decrypted}`);
   return decrypted;
 }
