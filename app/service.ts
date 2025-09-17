@@ -18,7 +18,7 @@ console.log("key:", ENCRYPTION_KEY.toString("base64"));
 const iv = crypto.randomBytes(16);
 console.log("iv:", iv.toString("hex"));
 
-// 📌 ฟังก์ชันเข้ารหัส
+//ฟังก์ชันเข้ารหัส
 export function encrypted(text: string): string {
   const iv = crypto.randomBytes(16); // 16 bytes IV
   const cipher = crypto.createCipheriv(algorithm, ENCRYPTION_KEY, iv);
@@ -30,7 +30,7 @@ export function encrypted(text: string): string {
   return iv.toString("base64") + ":" + encrypted;
 }
 
-// 📌 ฟังก์ชันถอดรหัส
+//ฟังก์ชันถอดรหัส
 export function decrypted(packed: string): string {
   const [ivB64, cipherB64] = packed.split(":");
   if (!ivB64 || !cipherB64) {

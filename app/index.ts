@@ -11,7 +11,7 @@ app.get("/about", (c) => {
   return c.json({ message: "Tanapat Nunkhong " });
 });
 
-// ✅ GET profiles
+//GET profiles
 app.get("/profile", async (c) => {
   const profiles = await prisma.profile.findMany();
 
@@ -24,7 +24,7 @@ app.get("/profile", async (c) => {
   return c.json(decodedProfiles);
 });
 
-// ✅ CREATE profile
+//CREATE profile
 app.post("/profile", async (c) => {
   const body = await c.req.json();
   console.log("input of profile", body);
