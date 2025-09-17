@@ -14,11 +14,11 @@ POST http://localhost:3000/profile
 Content-Type: application/json
 
 {
-  "username": "demo",
+  "username": "demo1",
   "password": "1234",
-  "mobile": "0933851531",
-  "cardId": "1233857891234"
+  "mobile": "0933851532",
+  "cardId": "1233857891235"
 }
 
 ### Get Profile by ID
-GET http://localhost:3000/profile/7645b518-749d-4c18-a2e3-93eb3a8d3a49
+GET http://localhost:3000/profile/b00ad9b2-b9a3-49d6-a524-440bd5c3eb8e

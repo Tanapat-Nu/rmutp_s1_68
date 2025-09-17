@@ -18,7 +18,7 @@
     id          String @id @default(uuid())
     username    String 
     password    String
-    mobile      String @unique @db.VarChar(255)
-    cardId      String @unique @db.VarChar(255)
+    mobile      String @unique @db.VarChar(24)
+    cardId      String @unique @db.VarChar(24)
     status      Boolean
   }
